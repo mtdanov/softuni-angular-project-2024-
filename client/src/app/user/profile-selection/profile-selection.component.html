@@ -1,0 +1,14 @@
+<div class="experience-item">
+    <div class="header">
+        <h3>{{title}}</h3>
+        @if(isOwner){
+        <i class="fa-regular fa-pen-to-square" (click)="enableEditing()"></i>
+        }
+    </div>
+    <p>{{value}}</p>
+
+    @if(isEditing){
+    <app-profile-edit-form [initialValue]="value" (closed)="closed()" (handleSubmit)="saveChangesHandler($event)"
+        [field]="field" />
+    }
+</div>
