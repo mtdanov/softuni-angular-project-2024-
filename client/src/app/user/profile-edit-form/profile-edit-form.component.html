@@ -1,0 +1,7 @@
+<div class="editing-container">
+    <div class="cross" (click)="close()">x</div>
+    <form [formGroup]="editForm" (ngSubmit)="onSubmit()" class="experience-edit">
+        <textarea class="form-group" formControlName="text" rows="6"></textarea>
+        <button type="submit">Save</button>
+    </form>
+</div>
