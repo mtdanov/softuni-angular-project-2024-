@@ -1,0 +1,19 @@
+<div class="modal-overlay">
+    <div class="message-form-container">
+        <p class="cross" (click)="close()">x</p>
+        <h2>Send Message</h2>
+        <form [formGroup]="messageForm" (ngSubmit)="onSubmit()" class="message-form">
+            <!-- <label for="recipient">To</label>
+            <input type="text" id="recipient" formControlName="recipient" placeholder="Recipient's name" required> -->
+
+            <label for="subject">Subject</label>
+            <input type="text" id="subject" formControlName="subject" placeholder="Message subject" required>
+
+            <label for="message">Message</label>
+            <textarea id="message" formControlName="message" placeholder="Write your message here..." rows="5"
+                required></textarea>
+
+            <button [disabled]="messageForm.invalid">Send</button>
+        </form>
+    </div>
+</div>
