@@ -1,1 +1,31 @@
-<p>header works!</p>
+<header class="site-section site-header">
+    <div class="site-tittle">
+        <a routerLink="/home">Sportix</a>
+    </div>
+    <nav class="main-nav">
+        <ul>
+            <li><a routerLink="/professionals">Professionals</a></li>
+            @if(isLogged$ | async){
+            @if(userType){
+            <li><a routerLink="/create-post">Create Post</a></li>
+            }
+            <li><a routerLink="/posts">Posts</a></li>
+            <li><a routerLink="/messages">Messages</a></li>
+            <div (click)="show()" class="media">
+                @if(profilePic$ | async; as profile){
+                <img src="{{profile}}" alt="">
+                }
+                @if(showItems){
+                <li><a (click)="logoutHanlder()">Logout</a></li>
+                @if(userType){
+                <li><a routerLink="/profile/{{userId}}">Profile</a></li>
+                }
+                }
+            </div>
+            }@else{
+            <li><a routerLink="/login">Login</a></li>
+            <li><a routerLink="/register">Register</a></li>
+            }
+        </ul>
+    </nav>
+</header>

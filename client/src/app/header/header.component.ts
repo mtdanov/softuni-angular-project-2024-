@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router, RouterLink } from '@angular/router';
 import { UserService } from '../user/user.service';
 import { Observable } from 'rxjs';
-import { AsyncPipe} from '@angular/common';
+import { AsyncPipe } from '@angular/common';
 
 @Component({
   selector: 'app-header',
@@ -14,10 +14,12 @@ import { AsyncPipe} from '@angular/common';
 export class HeaderComponent implements OnInit {
   showItems: boolean = false;
   profilePic$!: Observable<{ profilePic: string }>;
+  isLogged$!: Observable<boolean>;
   constructor(private userService: UserService, private router: Router) {}
 
   ngOnInit(): void {
-    this.userService.loggedIn$.subscribe((isLoggedIn) => {
+    this.isLogged$ = this.userService.isLogged$;
+    this.isLogged$.subscribe((isLoggedIn) => {
       if (isLoggedIn) {
         this.loadProfilePic();
       }
@@ -26,12 +28,15 @@ export class HeaderComponent implements OnInit {
 
   loadProfilePic(): void {
     this.profilePic$ = this.userService.getPic();
-    console.log(this.profilePic$);
   }
 
+  get userType() {
+    return this.userService.userType;
+  }
   get isLoggedIn(): boolean {
     return this.userService.isLogged;
   }
+
   get userId(): string | undefined {
     return this.userService.currentUserId;
   }
