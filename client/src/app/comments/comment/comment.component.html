@@ -1,0 +1,75 @@
+<!-- @if(!isEditing()){ -->
+<div class="showComments">
+  <div class="comment">
+    <p>{{comment.username}}: {{comment.comment}}</p>
+  </div>
+  <div class="separator">
+    <div class="date">
+      <p class="createdAt">{{ comment.createdAt | date: 'dd.MM.yyyy, HH:mm' }}</p>
+    </div>
+
+    <div class="comment-btns">
+      @if(canEdit){
+      <div class="edit-btn" (click)="
+        setActiveComment.emit({
+          id: comment._id,
+          type: activeCommentType.editing
+        })">edit</div>
+      }
+
+      @if(canDelete){
+      <div class="delete-btn" (click)="deleteComment.emit({commentId:comment._id, parentId:comment.parentId})">delete
+      </div>
+      }
+
+      @if(canReply){
+      <div class="reply-btn" (click)="
+        setActiveComment.emit({
+          id: comment._id,
+          type: activeCommentType.replying
+        })
+       ">reply</div>
+      }
+    </div>
+  </div>
+
+
+
+  @if(!showReplies && comment.replies.length > 0){
+  <div class="replies">
+    <p (click)="toggleReplies(comment._id)">{{ comment.replies.length === 1 ? 'This comment has 1 reply' :
+      'This comment has ' + comment.replies.length + ' replies' }}</p>
+  </div>
+  }
+
+
+  @if(showReplies){
+  <div class="show-replies">
+    @if(replies$ | async; as replies){
+    @for(reply of replies; track reply._id){
+    <app-comment [comment]="reply" (setActiveComment)="setActiveComment.emit($event)" [activeComment]="activeComment"
+      (updateComment)="updateComment.emit($event)" (deleteComment)="deleteComment.emit($event)"
+      (addComment)="addComment.emit($event)" [parentId]="comment._id" [currentUserId]="currentUserId">
+    </app-comment>
+    }
+    }
+  </div>
+  }
+</div>
+<!-- } -->
+
+
+<div class="comment-btn">
+  @if(isEditing()){
+  <app-comment-form submitLabel="Update" [hasCancelButton]="true" [initialText]="comment.comment" (handleSubmit)="
+    updateComment.emit({ text: $event, commentId: comment._id })
+  " (handleCancel)="setActiveComment.emit(null)" />
+  }
+
+  @if(isReplying()){
+  <app-comment-form submitLabel="Reply" (handleCancel)="setActiveComment.emit(null)" [hasCancelButton]="true"
+    (handleSubmit)="addComment.emit({ text: $event, parentId: replyId })" />
+  }
+
+
+</div>

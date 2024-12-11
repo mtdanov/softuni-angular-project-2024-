@@ -1,0 +1,18 @@
+<section class="comment">
+    <div class="comments">
+        <p class="cross" (click)="closeComments()">x</p>
+        <div class="comments-container">
+            @if(comments$ | async; as comments){
+            @for(comment of comments; track comment._id){
+            <app-comment [comment]="comment" [currentUserId]="userId" (updateComment)="updateComment($event)"
+                (setActiveComment)="setActiveComment($event)" [activeComment]="activeComment"
+                (addComment)="addComment($event)" (deleteComment)="deleteComment($event)"
+                (getReplies)="getReplies($event)" [replies$]="replies$" />
+            }
+            }
+        </div>
+
+        <app-comment-form submitLabel="Write" (handleSubmit)="addComment({ text: $event, parentId: null })" />
+
+    </div>
+</section>

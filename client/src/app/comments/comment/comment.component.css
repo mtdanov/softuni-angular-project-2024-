@@ -1,0 +1,69 @@
+.showComments {
+    max-width: 1000px;
+    display: flex;
+    flex-direction: column;
+    /* border: 2px solid red; */
+    margin-bottom: 0.5em;
+}
+
+.comment {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid rgb(213, 206, 206);
+    border-radius: 0.5em;
+    padding: 1em;
+    margin-top: 0.5em;
+}
+
+.separator {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    margin-top: 0.5em;
+}
+
+.createdAt {
+    display: block;
+    align-self: flex-end;
+    align-items: center;
+    font-size: 0.8em;
+    margin-top: 0.5em;
+    width: 110px;
+}
+
+
+.showComments p {
+    color: #fff
+}
+
+/* .showComments .comment {
+    display: flex;
+    margin-top: 0.5em;
+} */
+
+.comment-btns {
+    display: flex;
+    max-width: 180px;
+    align-items: center;
+    gap: 2em;
+    color: rgb(170, 166, 166);
+}
+
+.edit-btn,
+.delete-btn,
+.reply-btn:hover {
+    cursor: pointer;
+}
+
+.replies {
+    display: flex;
+    margin-top: 0.5em;
+}
+
+.replies:hover {
+    cursor: pointer;
+}
+
+.show-replies {
+    margin-left: 1em;
+}
