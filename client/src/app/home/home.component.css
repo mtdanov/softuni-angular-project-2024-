@@ -1,0 +1,47 @@
+.register-type {
+    background: rgb(40, 38, 38);
+    min-height: 100vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../../../public/images/group-diverse-athletes-sitting-together.jpg');
+    background-size: cover;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1600px;
+    margin: 0 auto;
+}
+
+img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.container li {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    width: 700px;
+    margin-top: 25em;
+    padding: 2em;
+    background: transparent;
+    border: 2px solid gray;
+    border-radius: 3em;
+}
+
+.container li a {
+    position: relative;
+    color: #278298;
+    text-decoration: none;
+    font-size: 3em;
+    font-weight: 900;
+}
+
+.container li:hover {
+    border: 2px solid #03495a;
+}
+
+.container li a :hover {
+    color: #03495a;
+}

@@ -18,8 +18,6 @@ import { matchPasswordValidator } from '../../utils/match-password-validator';
 })
 export class RegisterComponent implements OnInit {
   userType: string = '';
-  
-
 
   form = new FormGroup({
     firstName: new FormControl('', [Validators.required]),
@@ -51,7 +49,6 @@ export class RegisterComponent implements OnInit {
       this.userType = params['userType'];
     });
   }
- 
 
   register(): void {
     if (this.form.invalid) {

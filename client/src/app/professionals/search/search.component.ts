@@ -5,7 +5,7 @@ import {
   FormGroup,
   ReactiveFormsModule,
 } from '@angular/forms';
-import { atLeastOneFieldValidator } from '../../shared/utils/search-validator';
+import { atLeastOneFieldValidator } from '../../utils/search-validator';
 
 @Component({
   selector: 'app-search',

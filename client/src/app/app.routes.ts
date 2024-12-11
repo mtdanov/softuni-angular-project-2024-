@@ -2,7 +2,7 @@ import { Routes } from '@angular/router';
 import { LoginComponent } from './user/login/login.component';
 import { RegisterComponent } from './user/register/register.component';
 import { HomeComponent } from './home/home.component';
-import { RegisterProfessionalTypeComponent } from './user/register-professional-types/register-professional-type.component';
+import { RegisterProfessionalTypeComponent } from './user/register-professional-types/register-professional-types.component';
 import { ProfileComponent } from './user/profile/profile.component';
 import { AuthGuard } from './guards/auth.guard';
 import { ProfessionalsComponent } from './professionals/professionals/professionals.component';
