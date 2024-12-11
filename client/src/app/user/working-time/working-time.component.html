@@ -1,1 +1,13 @@
-<p>working-time works!</p>
+<div class="editWorkingTime">
+    <p class="cross" (click)="close()">x</p>
+    <form [formGroup]="workTimeForm" (ngSubmit)="onSubmit()">
+        @if(isOwner){
+        <div class="set-time">
+            <label>{{dayOfWeek}}</label>
+            <input type="time" formControlName="startTime" />
+            <input type="time" formControlName="endTime" />
+        </div>
+        }
+        <button [disabled]="workTimeForm.disabled">Запази</button>
+    </form>
+</div>
