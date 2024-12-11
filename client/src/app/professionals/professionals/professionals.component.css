@@ -1,0 +1,23 @@
+.professionals .container {
+    max-width: 1400px;
+    margin: 0 auto;
+
+}
+
+.noResult {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.noResult p {
+    color: #fff;
+    font-size: 2em;
+}
+
+
+.loader {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

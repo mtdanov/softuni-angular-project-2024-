@@ -1,0 +1,29 @@
+<section class="search">
+    <div class="container">
+        <form class="search-form" [formGroup]="searchForm" (ngSubmit)="search()">
+
+            <div class="form-group search-input">
+                <input type="text" formControlName="searchField">
+            </div>
+
+            <div class="form-group type-professional">
+                <select formControlName="professional">
+                    <option></option>
+                    @for(professional of professionals; track $index){
+                    <option [value]="professional">{{professional}}</option>
+                    }
+                </select>
+            </div>
+            <div class="form-group location">
+                <select formControlName="location">
+                    <option></option>
+                    @for(location of locations; track $index){
+                    <option [value]="location">{{ location }}</option>
+                    }
+
+                </select>
+            </div>
+            <button class="search-btn" [disabled]="searchForm.invalid">Search</button>
+        </form>
+    </div>
+</section>

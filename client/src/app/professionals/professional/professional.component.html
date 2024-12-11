@@ -1,0 +1,16 @@
+<div class="professional-card">
+    <div class="right-content">
+        <div class="media">
+            <img src={{professional.profilePic}} alt="snimka">
+        </div>
+        <div class="content">
+            <h2 class="name">{{professional.firstName}} {{professional.lastName}}</h2>
+            <p class="profession">{{professional.userType}}</p>
+            <p class="location">city: {{professional.city}}</p>
+        </div>
+    </div>
+
+    <div class="contact-btn">
+        <a [routerLink]="['/user/profile', professional._id]">View Profile</a>
+    </div>
+</div>

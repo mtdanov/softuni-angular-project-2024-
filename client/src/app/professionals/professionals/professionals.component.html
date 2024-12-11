@@ -1,0 +1,22 @@
+<section class="professionals">
+    <app-search (searchResults)="onSearchResults($event)"></app-search>
+    <div class="container">
+        @if(loading$ | async){
+        <div class="loader">
+            <app-loader></app-loader>
+        </div>
+        }
+
+        @if(search$ | async; as professionals){
+        @if(professionals.length > 0){
+        @for(professional of professionals; track professional._id){
+        <app-professional [professional]="professional" />
+        }
+        } @else{
+        <div class="noResult">
+            <p>No users found.</p>
+        </div>
+        }
+        }
+    </div>
+</section>

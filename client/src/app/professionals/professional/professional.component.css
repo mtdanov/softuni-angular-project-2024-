@@ -1,0 +1,64 @@
+img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 50%;
+    aspect-ratio: 1;
+}
+ 
+.media {
+    max-width: 150px;
+}
+
+.professional-card {
+    display: flex;
+    justify-content: space-between;
+    /* gap: 3em; */
+    padding: 4em;
+    background: #2b2929;
+    margin-bottom: 2em;
+    border-radius: 1.5em;
+}
+
+.right-content {
+    display: flex;
+    /* align-items: center; */
+    gap: 10em;
+}
+
+.right-content .content {
+    display: flex;
+    flex-direction: column;
+    gap: 0.7em;
+    font-size: 1.2em;
+}
+
+
+
+.professional-card .content h2 {
+    color: #fff;
+}
+
+.professional-card .content p {
+    color: #fff;
+    font-size: 1.5em;
+}
+
+.description {
+    font-size: 1.3em;
+    color: #fff;
+}
+
+.contact-btn {
+    display: flex;
+    align-items: center;
+}
+
+.contact-btn a {
+    border: 1px solid white;
+    border-radius: 1em;
+    padding: 0.6em;
+    text-decoration: none;
+    color: #fff;
+    font-size: 1.4em;
+}
