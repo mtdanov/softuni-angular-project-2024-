@@ -1,0 +1,14 @@
+@if(loader$ | async){
+<div class="search-results" infinite-scroll [infiniteScrollDistance]="2" [infiniteScrollThrottle]="50"
+    (scrolled)="onScroll()">
+    <section class="posts-page">
+        @if(posts$ | async; as posts){
+        @for(post of posts; track post._id){
+        <app-post-item [post]="post" />
+        }
+        }
+    </section>
+</div>
+}@else{
+<app-loader></app-loader>
+}

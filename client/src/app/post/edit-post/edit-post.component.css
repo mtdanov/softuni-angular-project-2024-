@@ -1,0 +1,209 @@
+section {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    /* Полупрозрачен черен фон */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    /* За да е над останалото съдържание */
+}
+
+img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.cross {
+    display: flex;
+    justify-content: flex-end;
+    text-transform: uppercase;
+    color: white;
+}
+
+.cross:hover {
+    cursor: pointer;
+}
+
+.post-card {
+    display: flex;
+    flex-direction: column;
+    margin: 2em 0;
+    padding: 1em;
+    gap: 0.8em;
+    background: #272727;
+    border-radius: 2em;
+    min-height: 600px;
+}
+
+.post-card .dropdown-menu {
+    position: relative;
+    display: inline-block;
+    margin-left: 28em;
+    cursor: pointer;
+}
+
+
+
+.post-card .dropdown-menu p {
+    color: #fff;
+    font-size: 2.5em;
+}
+
+.post-card .dropdown-menu .options {
+    display: block;
+    position: absolute;
+    top: 25px;
+    /* left: 0; */
+    right: 0;
+    background-color: #333;
+    /* border: 1px solid #ddd; */
+    border-radius: 0.5em;
+    padding: 1em;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+
+}
+
+.options ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+}
+
+.options ul li a {
+    display: block;
+    padding: 0.6em;
+    color: #fff;
+    text-decoration: none;
+}
+
+.options ul li a:hover {
+    background-color: #555;
+}
+
+
+.post-card .author {
+    display: flex;
+    gap: 1em;
+
+}
+
+.post-card .author .author-pic img {
+    max-width: 80px;
+    border-radius: 50%;
+    aspect-ratio: 1;
+    cursor: pointer;
+
+}
+
+
+.post-card .author .author-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0.5em;
+    /* color: #fff; */
+}
+
+.post-card .author .author-info a {
+    text-decoration: none;
+}
+
+.post-card .author .author-info h2 {
+    cursor: pointer;
+}
+
+.description {
+    margin-bottom: 1em;
+}
+
+
+.post-card .author .author-info h2,
+.post-card .author .author-info p,
+.post-card .description p {
+    color: #fff;
+}
+
+.post-card .description p {
+    margin: 0.7em;
+}
+
+textarea {
+    resize: none;
+    width: 100%;
+    height: 100px;
+    background: #272727;
+    outline: none;
+    border-radius: 1em;
+    padding: 1em;
+    color: #fff;
+}
+
+.media {
+    max-width: 800px;
+    border: 1px solid gray;
+    padding: 1em;
+    border-radius: 1em;
+}
+
+.media img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+button {
+    margin-top: 1em;
+    background: transparent;
+    padding: 0.5em 1em;
+    border-radius: 2em;
+    border: 1px solid #fff;
+    color: #fff;
+    cursor: pointer;
+}
+
+.post-button button:disabled {
+    background-color: #444;
+    cursor: not-allowed;
+}
+
+
+/* Styling the file input */
+.media .file-input {
+    display: block;                /* Makes the input a block-level element */
+    margin-top: 10px;              /* Adds some space above */
+    padding: 8px;                  /* Adds some padding inside the input */
+    font-size: 14px;               /* Changes the font size */
+    background-color: #f4f4f4;     /* Sets a light background */
+    border: 2px solid #ccc;        /* Adds a border */
+    border-radius: 4px;            /* Makes rounded corners */
+    cursor: pointer;              /* Changes the cursor to a pointer */
+  }
+  
+  /* Optionally, hide the default file input button */
+  .media .file-input::-webkit-file-upload-button {
+    display: none;
+  }
+  
+  /* If you want to add a custom button, here's an example */
+  .media .file-input + label {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .media .file-input:focus {
+    outline: none;                 /* Removes the outline when focused */
+    border-color: #007bff;         /* Changes the border color on focus */
+  }
+  

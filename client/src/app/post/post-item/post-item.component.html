@@ -1,0 +1,77 @@
+@if(showModal){
+<app-delete-modal [showModal]="showModal" (closed)="onModalClosed()" (delTrue)="onDelPostConfirmed()" />
+}
+
+
+@if(canEdit){
+<app-edit-post [postId]="post._id" (closed)="onEditClosed()" />
+}
+
+
+<div class="container">
+    <div class="post-card">
+        <div class="author">
+            <div class="author-pic">
+                <a routerLink='/user/profile/{{post.owner._id}}'>
+                    <img src={{post.owner.profilePic}} alt="">
+                </a>
+            </div>
+            <div class="author-info">
+                <a routerLink='/user/profile/{{post.owner._id}}'>
+                    <h2>{{post.owner.firstName}} {{post.owner.lastName}}</h2>
+                </a>
+                <p>{{post.createdAt | date: 'dd.MM.yyyy, HH:mm'}}</p>
+            </div>
+
+            @if(post.owner._id === currentUserId){
+            <div class="dropdown-menu">
+                <p (click)="toggleDropdown(post._id)">...</p>
+                @if(activeDropdown === post._id){
+                <div class="options">
+                    <ul>
+                        <li>
+                            <i class="fa-regular fa-pen-to-square"></i>
+                            <a (click)="toggleEdit()">Edit</a>
+                        </li>
+
+                        <li>
+                            <i class="fa-solid fa-trash"></i>
+                            <a (click)="openDeleteModal(post._id)">Delete</a>
+                        </li>
+                    </ul>
+                </div>
+                }
+            </div>
+            }
+
+        </div>
+        <div class="description">
+            <p>{{post.description}}</p>
+        </div>
+
+        <div class="media">
+            <img src={{post.postPic}} alt="">
+        </div>
+
+
+        <div class="count">
+            <p>{{post.likes.length}} харесвания</p>
+            <!-- <p>{{post.comments}}</p> -->
+        </div>
+
+        <div class="post-btns">
+            @if(!isLiked(post) && !isCreator(post)){
+            <a (click)="like(post._id)">Like</a>
+            }
+            @if(isLiked(post) && !isCreator(post)){
+            <a (click)="unlike(post._id)">Unlike</a>
+            }
+            <a (click)="toggleComments(post._id)">comment</a>
+            @if(activeComment === post._id){
+            <app-comments [postId]="post._id" [userId]="currentUserId" [username]="currentUsername"
+                (closed)="onCommenteClosed()" />
+            }
+        </div>
+
+    </div>
+</div>

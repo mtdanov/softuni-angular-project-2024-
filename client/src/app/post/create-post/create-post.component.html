@@ -1,0 +1,30 @@
+<section class="post-container">
+    <form class="post-form" [formGroup]="post" (ngSubmit)="upload()">
+
+        <div class="form-group description">
+            <textarea formControlName="description" id="description"></textarea>
+        </div>
+
+
+        <div class="upload-container">
+            <label class="upload-label">
+                <span class="upload-text">Click to upload an image</span>
+                <input type="file" accept="image" (change)="onImageSelected($event)">
+                @if(preview){
+                <img src={{preview}} class="preview" />
+                }
+            </label>
+        </div>
+        <!-- <div class="form-group media">
+            <label for="postPic" class="upload-label">
+            <img src={{preview}} class="preview" />
+            <input id="postPic" type="file" accept="image" (change)="onImageSelected($event)">
+            </label>
+        </div> -->
+
+        <div class="post-button">
+            <button [disabled]="post.invalid">Post</button>
+        </div>
+
+    </form>
+</section> >

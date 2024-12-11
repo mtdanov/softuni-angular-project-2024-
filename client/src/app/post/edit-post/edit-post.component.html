@@ -1,0 +1,39 @@
+<section>
+    <div class="container">
+        @if(post$ | async; as post){
+        <div class="post-card">
+            <p class="cross" (click)="close()">x</p>
+            <div class="author">
+                <div class="author-pic">
+                    <a routerLink='/user/profile/{{post.owner._id}}'>
+                        <img src={{post.owner.profilePic}} alt="">
+                    </a>
+                </div>
+                <div class="author-info">
+                    <a routerLink='/user/profile/{{post.owner._id}}'>
+                        <h2>{{post.owner.firstName}} {{post.owner.lastName}}</h2>
+                    </a>
+                    <p>{{post.createdAt | date: 'dd.MM.yyyy, HH:mm'}}</p>
+                </div>
+
+            </div>
+
+            <form [formGroup]="postForm" (ngSubmit)="onSubmit()">
+                <div class="description">
+                    <textarea class="form-group" formControlName="description"></textarea>
+                </div>
+                <div class="media">
+                    @if(!previewUrl){
+                    <img src={{post.postPic}} alt="">
+                    }@else {
+                    <img [src]="previewUrl" alt="">
+                    }
+                    <input type="file" (change)="onFileSelected($event)" />
+                </div>
+                <button [disabled]="postForm.invalid">Save</button>
+            </form>
+        </div>
+        }
+
+    </div>
+</section>

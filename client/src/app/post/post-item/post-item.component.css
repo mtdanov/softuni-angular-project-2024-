@@ -1,0 +1,163 @@
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.post-card {
+    display: flex;
+    flex-direction: column;
+    margin: 2em 0;
+    padding: 1em;
+    gap: 0.8em;
+    background: #272727;
+    border-radius: 2em;
+    min-height: 600px;
+}
+
+.post-card .dropdown-menu {
+    position: relative;
+    display: inline-block;
+    margin-left: 28em;
+    cursor: pointer;
+}
+
+/* .post-card .options:hover{
+    background: #272727;
+} */
+
+.post-card .dropdown-menu p {
+    color: #fff;
+    font-size: 2.5em;
+}
+
+.post-card .dropdown-menu .options {
+    display: block;
+    position: absolute;
+    top: 25px;
+    /* left: 0; */
+    right: 0;
+    background-color: #333;
+    /* border: 1px solid #ddd; */
+    border-radius: 0.5em;
+    padding: 1.2em;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+
+}
+
+.options ul {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.options ul li {
+    display: flex;
+    align-items: center;
+}
+
+.options ul li a {
+    display: block;
+    padding: 0.8em;
+    color: #fff;
+    text-decoration: none;
+}
+
+.options ul li:hover {
+    border-radius: 0.5em;
+    background-color: #555;
+}
+
+/* .post-card .options-container .options:active {
+    display: block;
+} */
+
+.post-card .author {
+    display: flex;
+    gap: 1em;
+
+}
+
+.post-card .author .author-pic img {
+    max-width: 80px;
+    border-radius: 50%;
+    aspect-ratio: 1;
+    cursor: pointer;
+
+}
+
+
+.post-card .author .author-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0.5em;
+    /* color: #fff; */
+}
+
+.post-card .author .author-info a {
+    text-decoration: none;
+}
+
+.post-card .author .author-info h2 {
+    cursor: pointer;
+}
+
+.post-card .author .author-info h2,
+.post-card .author .author-info p,
+.post-card .description p {
+    color: #fff;
+}
+
+
+.post-card .description p {
+    margin: 0.7em;
+}
+
+.media {
+    max-width: 800px;
+    border: 1px solid gray;
+    padding: 1em;
+    border-radius: 1em;
+}
+
+.media img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.count {
+    display: flex;
+    justify-content: space-between;
+}
+
+.count p {
+    color: #fff;
+
+}
+
+
+.post-btns {
+    display: flex;
+    gap: 1.5em;
+    border-top: 1px solid rgb(83, 79, 79);
+    padding: 0.5em;
+}
+
+.post-btns a {
+    margin-top: 1em;
+    padding: 0.5em 1em;
+    border: 2px solid #fff;
+    color: #fff;
+    border-radius: 1em;
+    cursor: pointer;
+}
