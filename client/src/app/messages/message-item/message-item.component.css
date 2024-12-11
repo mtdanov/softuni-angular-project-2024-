@@ -1,0 +1,53 @@
+ .discussion {
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     width: 400px;
+     margin-top: 1em;
+     margin-left: 1em;
+     background-color: #FAFAFA;
+     border-bottom: solid 1px #E0E0E0;
+     padding: 0.8em;
+     cursor: pointer;
+ }
+
+
+ img {
+     display: block;
+     width: 100%;
+     height: auto;
+     border-radius: 50%;
+     aspect-ratio: 1;
+ }
+
+ .media {
+     max-width: 50px;
+ }
+
+ .contact {
+     display: flex;
+     flex-direction: column;
+     margin-left: 1em;
+ }
+
+ .discussion .name {
+     display: flex;
+     flex-direction: row;
+     font-size: 20px;
+ }
+
+ .discussion .message {
+     font-family: 'Montserrat', sans-serif;
+     font-size: 15px;
+     color: #515151;
+ }
+
+ .timer {
+     margin-left: 2.5em;
+     font-size: 15px;
+     padding: 3px 8px;
+     color: #515151;
+     background-color: #FFF;
+     border: 1px solid #828080;
+     border-radius: 15px;
+ }

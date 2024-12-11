@@ -1,0 +1,32 @@
+<section class="discussions">
+    <div class="btns">
+        <p (click)="refresh()">Refresh</p>
+        <p (click)="myMessages()">My messages</p>
+        <p (click)="sendMessages()">Send messages</p>
+    </div>
+    @if(loader$ | async){
+    <div class="loader">
+        <app-loader />
+    </div>
+    }
+
+    @if(activeTab === 'myMessages'){
+    @if(messages$ | async; as messages){
+    @for(message of messages; track message._id){
+    <app-message-item [message]="message" (messageSelected)="showMessage($event)" />
+    }
+    }
+    }
+
+    @if(activeTab === 'sendMessages'){
+    @if(sendMessages$ | async; as messages){
+    @for(message of messages; track message._id){
+    <app-message-item [message]="message" (messageSelected)="showMessage($event)" />
+    }
+    }
+    }
+
+    @if(selectedMessage){
+    <app-show-message (closed)="onClose()" [message]="selectedMessage" [userId]="userId" />
+    }
+</section>

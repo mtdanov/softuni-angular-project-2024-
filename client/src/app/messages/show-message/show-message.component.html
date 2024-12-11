@@ -1,0 +1,24 @@
+<div class="modal-overlay">
+    <div class="message-details-container">
+        <div class="message-header">
+            <p class="cross" (click)="close()">x</p>
+            <h2>Message from: <span class="sender-name">{{message.ownerId.firstName}}
+                    {{message.ownerId.lastName}}</span>
+            </h2>
+            <p class="message-subject">Subject: {{message.subject}}r</p>
+        </div>
+
+        <div class="message-body">
+            <p>{{message.message}}</p>
+        </div>
+        @if(!isOwner){
+        <div class="reply-section">
+            <form [formGroup]="replyForm" (ngSubmit)="onSubmit()">
+                <h3>Reply</h3>
+                <textarea formControlName="replyText" placeholder="Напишете вашия отговор тук..." rows="5"></textarea>
+                <button>Send</button>
+            </form>
+        </div>
+        }
+
+    </div>

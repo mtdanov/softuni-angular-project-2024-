@@ -1,0 +1,10 @@
+<div class="discussion" (click)="onSelectMessage()">
+    <div class="media">
+        <img src={{message.ownerId.profilePic}} alt="">
+    </div>
+    <div class="contact">
+        <p class="name">{{message.ownerId.firstName}} {{message.ownerId.lastName}}</p>
+        <p class="message">{{message.message.slice(0,5)}}.....</p>
+    </div>
+    <div class="timer">{{ message.createdAt | date: 'dd.MM.yyyy, HH:mm' }}</div>
+</div>
