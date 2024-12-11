@@ -1,0 +1,208 @@
+.site-section.banner {
+    margin: 2em 0;
+}
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.username {
+    display: flex;
+    align-items: center;
+    gap: 2em;
+    margin-left: 500px;
+    margin-bottom: 2em;
+}
+
+.username h2 {
+    color: #fff;
+    font-size: 3em;
+}
+
+.username p {
+    padding: 1em;
+    border: 1px solid grey;
+    border-radius: 20px;
+    color: #fff;
+}
+
+.username p:hover {
+    cursor: pointer;
+}
+
+.site-section.banner .container {
+    display: flex;
+    flex-direction: column;
+}
+
+.site-section.banner h2 {
+    font-size: 3.4em;
+    font-weight: normal;
+    color: #fff;
+}
+
+.send-msg {
+    color: #fff;
+    padding: 1em 2em;
+    font-size: 1.5em;
+    border: 1px solid #fff;
+    border-radius: 3em;
+    cursor: pointer;
+}
+
+
+
+.site-section.columns .column {
+    display: flex;
+    flex-direction: column;
+}
+
+.item {
+    max-width: 1000px;
+    background: #272727;
+    margin-bottom: 2em;
+}
+
+.item .experience,
+.item .information,
+.item .price,
+.item .working-time {
+    display: flex;
+    flex-direction: column;
+    border: 2px solid gray;
+}
+
+.item .experience h2,
+.item .information h2,
+.item .price h2,
+.working-time h2 {
+    font-size: 1.5em;
+    padding-top: 0.5em;
+    padding-left: 0.5em;
+    margin-bottom: 0.5em;
+    color: #fff;
+    cursor: pointer;
+}
+
+.experience .experience-item,
+.information .information-item {
+    padding-top: 0.5em;
+    padding-left: 0.5em;
+    margin-bottom: 1em;
+    border-top: 1px solid gray;
+    color: #fff;
+}
+
+.item .experience-item .header,
+.item .information-item .header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1em;
+}
+
+.item .experience-item .fa-regular.fa-pen-to-square,
+.item .information-item .fa-regular.fa-pen-to-square {
+    display: inline-flex;
+    font-size: 1.5em;
+    cursor: pointer;
+    margin-right: 0.3em;
+}
+
+.item .experience-item .fa-regular.fa-pen-to-square:hover,
+.item .information-item .fa-regular.fa-pen-to-square:hover {
+    color: #03495a;
+
+}
+
+.item .experience-item h3,
+.item .information-item h3 {
+    display: inline-flex;
+    font-size: 1.4em;
+    color: #fff;
+}
+
+
+
+
+/* working time */
+/* .working-time {
+    display: flex;
+    flex-direction: column;
+    border: 2px solid gray;
+    color: #fff;
+} */
+
+/* .item .working-time h2 {
+    font-size: 1.7em;
+    padding: 0.4em;
+    color: #fff;
+
+} */
+
+/* .working-time h4:hover {
+    cursor: pointer;
+} */
+
+
+
+.working-time-item {
+    border-bottom: 1px solid gray;
+}
+
+.working-time .workig-time-details .fa-regular.fa-pen-to-square {
+    display: inline-flex;
+    font-size: 1.5em;
+    cursor: pointer;
+    margin-right: 0.3em;
+    color: #fff;
+}
+
+.working-time .workig-time-details .fa-regular.fa-pen-to-square:hover {
+    color: #03495a;
+
+}
+
+.workig-time-details ul {
+    list-style: none;
+}
+
+.workig-time-details ul li {
+    display: flex;
+    justify-content: space-between;
+    margin: 1em;
+    border-bottom: 1px solid gray;
+}
+
+.workig-time-details ul li>p {
+    font-size: 1.7em;
+    color: #fff;
+}
+
+/* galeria */
+/* .galeria {
+    display: block;
+    flex-direction: column;
+    border: 2px solid gray;
+    max-height: 500px;
+    overflow: hidden;
+}
+
+.galeria h3 {
+    padding: 0.5em;
+    font-size: 2em;
+    color: #fff;
+}
+
+.galeria .uploaded-pics {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1em;
+}
+
+
+.galeria .uploaded-pics img {
+    max-width: 200px;
+    cursor: pointer;
+} */

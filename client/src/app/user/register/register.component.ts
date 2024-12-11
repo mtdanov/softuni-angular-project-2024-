@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { UserService } from '../user.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import {
@@ -16,8 +16,11 @@ import { matchPasswordValidator } from '../../utils/match-password-validator';
   templateUrl: './register.component.html',
   styleUrl: './register.component.css',
 })
-export class RegisterComponent {
+export class RegisterComponent implements OnInit {
   userType: string = '';
+  
+
+
   form = new FormGroup({
     firstName: new FormControl('', [Validators.required]),
     lastName: new FormControl('', [Validators.required]),
@@ -31,7 +34,7 @@ export class RegisterComponent {
         validators: [matchPasswordValidator('password', 'repeatPassword')],
       }
     ),
-    city: new FormControl('', [Validators.required]),
+    city: new FormControl(''),
   });
 
   get passGroup() {
@@ -43,17 +46,15 @@ export class RegisterComponent {
     private router: Router,
     private route: ActivatedRoute
   ) {}
-
   ngOnInit(): void {
     this.route.params.subscribe((params) => {
       this.userType = params['userType'];
     });
   }
+ 
 
   register(): void {
     if (this.form.invalid) {
-      console.log(this.form.value);
-
       return;
     }
 

@@ -1,3 +1,18 @@
+/* 
+.send-msg {
+    color: #fff;
+    padding: 1em 2em;
+    font-size: 1.5em;
+    border: 1px solid #fff;
+    border-radius: 3em;
+    cursor: pointer;
+} */
+
+
+
+
+
+
 
 .experience-item {
     padding-top: 0.5em;
@@ -22,6 +37,7 @@
 
 .experience-item .fa-regular.fa-pen-to-square:hover {
     color: #03495a;
+
 }
 
 .experience-item h3 {
@@ -29,3 +45,7 @@
     font-size: 1.4em;
     color: #fff;
 }
+
+/* .experience-item h3:hover {
+    cursor: pointer;
+} */

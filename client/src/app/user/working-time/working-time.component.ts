@@ -26,8 +26,7 @@ export class WorkingTimeComponent {
     startTime: new FormControl('', [Validators.required]),
     endTime: new FormControl('', [Validators.required]),
   });
-  constructor(private fb: FormBuilder) {
-  }
+  constructor(private fb: FormBuilder) {}
 
   close(): void {
     this.closed.emit();
@@ -39,4 +38,6 @@ export class WorkingTimeComponent {
     }
     this.closed.emit();
   }
+
+  // napravi poveche opcii !!!!
 }

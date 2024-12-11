@@ -1,1 +1,108 @@
-<p>register works!</p>
+<section class="register">
+    <div class="container">
+        <form class="club-form" [formGroup]="form" (ngSubmit)="register()">
+
+            @if(userType === 'club'){
+            <div class="form-group">
+                <input type="text" name="firstName" id="firstName" placeholder="Club Name" formControlName="firstName">
+                @if(form.get('firstName')?.touched){
+                <div class="error-container">
+                    @if(form.get('firstName')?.errors?.['required']){
+                    <p class="error">Club Name is required!</p>
+                    }
+                </div>
+                }
+            </div>
+            }@else{
+            <div class="form-group">
+                <input type="text" name="firstName" id="firstName" placeholder="Name" formControlName="firstName">
+                @if(form.get('firstName')?.touched){
+                <div class="error-container">
+                    @if(form.get('firstName')?.errors?.['required']){
+                    <p class="error">Name is required!</p>
+                    }
+                </div>
+                }
+            </div>
+
+
+            <div class="form-group">
+                <input type="text" name="lastName" id="lastName" placeholder="Last name" formControlName="lastName">
+                @if(form.get('lastName')?.touched){
+                <div class="error-container">
+                    @if(form.get('lastName')?.errors?.['required']){
+                    <p class="error">Last name is required!</p>
+                    }
+                </div>
+                }
+            </div>
+            }
+
+
+
+
+            <div class="form-group">
+                <input type="email" name="email" id="email" placeholder="Email" formControlName="email">
+                @if(form.get('email')?.touched){
+                <div class="error-container">
+                    @if(form.get('email')?.errors?.['required']){
+                    <p class="error">Email is required!</p>
+                    }
+                    @if(form.get('email')?.errors?.['emailValidator']){
+                    <p class="error">Email is not valid!</p>
+                    }
+                </div>
+                }
+            </div>
+
+            <div class="form-group">
+                <input type="text" name="city" id="city" placeholder="City" formControlName="city">
+                @if(form.get('city')?.touched){
+                <div class="error-container">
+                    @if(form.get('city')?.errors?.['required']){
+                    <p class="error">City is required!</p>
+                    }
+                </div>
+                }
+            </div>
+
+
+
+            <div formGroupName="passGroup">
+
+                <div class="form-group">
+                    <input type="password" name="password" id="password" placeholder="Password"
+                        formControlName="password">
+                    @if(passGroup?.get('password')?.touched){
+                    <div class="error-container">
+                        @if(passGroup?.get('password')?.errors?.['required']){
+                        <p class="error">Password is required!</p>
+                        }
+                    </div>
+                    }
+                </div>
+
+
+
+
+                <div class="form-group">
+                    <input type="password" name="repeatPassword" id="repeatPassword" placeholder="Repeat password"
+                        formControlName="repeatPassword">
+                    @if(passGroup?.get('repeatPassword')?.touched){
+                    <div class="error-container">
+                        @if(passGroup?.errors?.['matchPasswordsValidator'] ||
+                        passGroup?.get('repeatPassword')?.errors?.['required']){
+                        <p class="error">Repeat Password does not match password!</p>
+                        }
+                    </div>
+                    }
+                </div>
+
+
+
+            </div>
+
+            <button class="register-club-btn" [disabled]="form.invalid">Register</button>
+        </form>
+    </div>
+</section>

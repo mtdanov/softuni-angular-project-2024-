@@ -1,0 +1,12 @@
+@if(loading$ | async){
+    <div class="loader-position">
+        <app-loader></app-loader>
+    </div>
+    }@else{
+    <div class="media">
+        <img class="profile-banner" src={{profileBanner}} alt="">
+        @if(isOwner){
+        <input class="banner-input" type="file" id="file" accept="image" (change)="onImageSelected($event, 'banner')">
+        }
+    </div>
+    }
