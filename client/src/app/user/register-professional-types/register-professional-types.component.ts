@@ -5,7 +5,7 @@ import { RouterLink } from '@angular/router';
   selector: 'app-register-professional-type',
   standalone: true,
   imports:[RouterLink],
-  templateUrl: './register-professional-type.component.html',
-  styleUrls: ['./register-professional-type.component.css'],
+  templateUrl: './register-professional-types.component.html',
+  styleUrls: ['./register-professional-types.component.css'],
 })
 export class RegisterProfessionalTypeComponent {}
