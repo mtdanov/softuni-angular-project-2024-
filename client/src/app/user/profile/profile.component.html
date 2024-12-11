@@ -1,0 +1,113 @@
+<section class="profile">
+
+    <section class="site-section banner">
+        <div class="container">
+
+            @if(profileBanner$ | async; as banner ){
+            <app-profile-banner (imageSelected)="uploadBanner($event)" [profileBanner]="banner"
+                [loading$]="bannerLoading$" [isOwner]="isOwner" />
+            }
+            @if(profilePic$ | async; as pic){
+            <app-profile-pic (imageSelected)="uploadProfilePic($event)" [profilePic]="pic" [isOwner]="isOwner"
+                [loading$]="profilePicLoading$" />
+            }
+
+
+        </div>
+
+    </section>
+
+
+    @if(profileInformation$ | async; as profile){
+    <div class="username">
+        <h2>{{profile.name}}</h2>
+        <p class="messageForm" (click)="onToggle('message')">SendMessage</p>
+        @if(showSendMessage){
+        <app-message-form (closed)="onClose()" [id]="id"></app-message-form>
+        }
+    </div>
+    <section class="site-section columns">
+        <div class="container">
+            <div class="column">
+                <div class="item">
+                    <div class="experience">
+                        <h2 class="active" (click)="onToggle('experience')">Experience <span>▼</span></h2>
+
+                        @if(showExperience){
+                        <app-profile-selection [title]="'About me'" [value]="profile.about" [field]="'about'"
+                            [isEditing]="isEditingField === 'about'" (saveChanges)="saveChanges($event)"
+                            (close)="onClose()" [isOwner]="isOwner"></app-profile-selection>
+
+                        <app-profile-selection [title]="'Study'" [value]="profile.studies" [field]="'studies'"
+                            [isEditing]="isEditingField === 'studies'" (saveChanges)="saveChanges($event)"
+                            (close)="onClose()" [isOwner]="isOwner"></app-profile-selection>
+                        }
+                    </div>
+                </div>
+
+                <div class="item">
+                    <div class="information">
+                        <h2 (click)="onToggle('information')">Information <span>▼</span></h2>
+                        @if(showInformation){
+                        <app-profile-selection [title]="'Services'" [value]="profile.services" [field]="'services'"
+                            [isEditing]="isEditingField === 'services'" (saveChanges)="saveChanges($event)"
+                            (close)="onClose()" [isOwner]="isOwner"></app-profile-selection>
+
+                        <app-profile-selection [title]="'Location'" [value]="profile.location"
+                            [field]="'location'" [isEditing]="isEditingField === 'location'"
+                            (saveChanges)="saveChanges($event)" (close)="onClose()"
+                            [isOwner]="isOwner"></app-profile-selection>
+                        }
+                    </div>
+                </div>
+
+                <div class="item">
+                    <div class="price">
+                        <div class="price-item">
+                            <h2 (click)="onToggle('price')">Prices <span>▼</span></h2>
+                            @if(showPrice){
+                            <app-profile-selection [title]="'Price'" [value]="profile.price" [field]="'price'"
+                                [isEditing]="isEditingField === 'price'" (saveChanges)="saveChanges($event)"
+                                (close)="onClose()" [isOwner]="isOwner"></app-profile-selection>
+                            }
+                        </div>
+                    </div>
+                </div>
+
+                <div class="item">
+                    <div class="working-time">
+                        <div class="working-time-item">
+                            <h2 (click)="onToggle('working')">Work Time <span>▼</span></h2>
+                            @if(editWorkingTime){
+                            <app-working-time [dayOfWeek]="day" (handleSubmit)="updateWorkingTime($event)"
+                                (closed)="onClose()" [isOwner]="isOwner" />
+                            }
+                        </div>
+                        @if(showWorkingTime){
+                        <div class="workig-time-details">
+                            @if(workTime$ | async; as time){
+                            <ul>
+                                @for( day of days; track $index){
+                                <li>
+                                    <p>{{ day }}</p>
+                                    <p>{{ time[day] }}</p>
+                                    @if(isOwner){
+                                    <i class="fa-regular fa-pen-to-square" (click)="workingTime(day)"></i>
+                                    }
+                                </li>
+                                }
+
+                            </ul>
+                            }
+
+                        </div>
+                        }
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+    }
+</section>
