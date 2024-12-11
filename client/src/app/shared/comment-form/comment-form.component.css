@@ -1,0 +1,44 @@
+h5 {
+    color: #fff;
+    font-size: 1em;
+    font-weight: 400;
+    margin-bottom: 0.5em;
+  }
+  
+  
+  .comment-form-textarea {
+    width: 100%;
+    font-size: 1em;
+    padding: 1em;
+    background: #272727;
+    border-radius: 1em;
+    outline: none;
+    color: #fff;
+    overflow: hidden;
+    resize: none;
+  }
+  
+  
+  
+  .comment-form-button {
+    width: 10%;
+    margin-top: 1.2em;
+    align-self: self-end;
+    padding: 0.4em;
+    background: transparent;
+    color: #fff;
+    border: 1px solid #fff;
+    border-radius: 1.2em;
+    cursor: pointer;
+    outline: none;
+  }
+  
+  .comment-form-button:hover:enabled {
+    cursor: pointer;
+    background: #03495a;
+  }
+  
+  .comment-form-button:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+  }
