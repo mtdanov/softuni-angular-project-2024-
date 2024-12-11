@@ -41,7 +41,7 @@ export class LoginComponent {
       this.form.value;
 
     this.userService.login(email!, password!).subscribe((res) => {
-      this.router.navigate(['/']);
+      this.router.navigate(['/posts']);
     });
   }
 }
